@@ -1,0 +1,22 @@
+<form action="/" method="post">
+{% csrf_token %}
+{% if rating_list %}
+    <ul>
+    {% for rating in rating_list %}
+    <input type="radio" value="{{ rating }}" name="choice" id="rating{{rating}}"></input>
+    <label for="choice{{ forloop.counter }}">{{rating}}</label><br />
+    {% endfor %}
+    <input type="submit" value="Vote">
+</form>
+    </ul>
+    <h4>id: {{id}}</h4>
+    <h3>title: {{title}}</h3>
+    <h3>singer: {{singer}}</h3>
+    <h3>RBMCF:</h3>
+    <h3>user {{userid}} may rate music {{id}} for rating: {{pred}}</h3>
+    <h3>AHRBMCF:</h3>
+    <h3>user {{userid}} may rate music {{id}} for rating: {{ah_pred}}</h3>
+    <audio src="{{url}}" controls="controls" autoplay="autoplay"></audio>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
