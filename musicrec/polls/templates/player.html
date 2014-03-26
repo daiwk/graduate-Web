@@ -1,3 +1,7 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="http://172.18.217.67:8000/css/player.css"/> 
+</head>
+<body>
 <form action="/" method="post">
 {% csrf_token %}
 {% if rating_list %}
@@ -19,4 +23,5 @@
     <audio src="{{url}}" controls="controls" autoplay="autoplay"></audio>
 {% else %}
     <p>No polls are available.</p>
-{% endif %}
+    {% endif %}
+</body>
