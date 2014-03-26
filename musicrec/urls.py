@@ -19,7 +19,8 @@ urlpatterns = patterns('',
     #url(r'^music/(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.MEDIA_ROOT}),
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^login/', include(admin.site.urls)),
+    url(r'^login/', 'musicrec.views.login_view'),
+    url(r'^logout/', 'musicrec.views.logout_view'),
 )
 
 # Serve static files for admin, use this for debug usage only
