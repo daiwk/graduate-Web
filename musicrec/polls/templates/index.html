@@ -1,9 +1,42 @@
-{% if latest_poll_list %}
-    <ul>
-    {% for poll in latest_poll_list %}
-        <li><a href="/polls/{{ poll.id }}/">{{ poll.question }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No polls are available.</p>
-{% endif %}
+<head>
+    <link rel="stylesheet" type="text/css" href="http://172.18.217.67:8000/css/player.css"/> 
+    <link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+</head>
+<body background="{{bg_src}}">
+    <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <img src="/imgs/logo.png"/>
+        <div class="pull-right"> 
+            {% if user.is_authenticated %}
+            <p style="font-family: 楷体;color: gold;">欢迎您：{{user}}&nbsp;&nbsp; 
+            <a class="btn danger small" href="{% url "musicrec.views.logout_view" %}">注销</a>       
+            </p>
+            {% else %}         
+            <form action="{% url "musicrec.views.login_view" %}" method='post' class="pull-right">         
+                {% csrf_token %}        
+                <input name='username' class="input-small" type="text" placeholder="用户名" style="font-family:楷体;-webkit-border-radius: 10px;      -moz-border-radius:10px;      border-radius:10px;margin-right:20px">           
+                <input name='password' class="input-small" type="password" style="font-family:楷体;-webkit-border-radius: 10px;      -moz-border-radius:10px;      border-radius:10px;margin-right:20px" placeholder="密码">           
+                <button class="btn btn-info" type="submit" style="font-family:楷体;margin-right:20px;font-size: 16;">登录</button>
+            </form>
+            {% endif %}    
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row row-offcanvas row-offcanvas-right">
+
+            <div class="col-xs-12 col-sm-9" style="opacity: 0.88;top:60px;background-color: rgba(175, 129, 129, 0.5);-webkit-border-radius: 10px;      -moz-border-radius:10px;      border-radius:10px;      -moz-box-shadow: 6px 11px 10px gray;      -webkit-box-shadow: 6px 11px 10px gray;      box-shadow: 6px 11px 10px gray;right:2%;">
+                <iframe src="/musicrec/player.html" name="musicframe" class="musicframeclass" frameborder="0"
+                    allowtransparency="true" scrolling="no" style="width: 100%; height: 100%;-webkit-border-radius: 5px;      -moz-border-radius:5px;      border-radius:5px;">
+                </iframe>
+            </div>
+
+            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" style="opacity: 0.88;top:60px;background-color: rgba(175, 129, 129, 0.5);-webkit-border-radius: 10px;      -moz-border-radius:10px;      border-radius:10px;      -moz-box-shadow: 6px 11px 10px gray;      -webkit-box-shadow: 6px 11px 10px gray;      box-shadow: 6px 11px 10px gray;">
+
+                <iframe src="/musicrec/recommendation.html" name="recommendframe" class="recommendframeclass" frameborder="0"
+                    allowtransparency="true" scrolling="no" style="width: 100%; height: 100%;-webkit-border-radius: 5px;      -moz-border-radius:5px;      border-radius:5px;">
+                </iframe>
+
+            </div>
+        </div>
+
+    </div>

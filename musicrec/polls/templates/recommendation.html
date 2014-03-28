@@ -1,0 +1,12 @@
+
+<center>
+    <div class="col-xs-12 col-sm-9" style="top:60px">
+        <h1 style="font-family: 楷体;color: black;">推荐</h1>
+{% autoescape off %}
+                {% for rec_id in rec_list %}
+                <p style="font-family: 楷体;color: black;text-align:left"> {{rec_id}} </p>       
+                {% endfor %}
+                {% endautoescape %}
+
+    </div>
+</center>

@@ -8,8 +8,9 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'musicrec.views.home', name='home'),
     # url(r'^musicrec/', include('musicrec.foo.urls')),
-    url(r'^musicrec/', 'musicrec.views.player'),
-    url(r'^$', 'musicrec.views.player'),
+    url(r'^musicrec/player.html', 'musicrec.views.player'),
+    url(r'^musicrec/recommendation.html', 'musicrec.views.recommend'),
+    url(r'^$', 'musicrec.views.index'),
     url(r'^polls/', include('musicrec.polls.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

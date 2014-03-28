@@ -5,6 +5,7 @@ class Song(models.Model):
     title = models.CharField(max_length=1000)
     singer = models.CharField(max_length=1000)
     path = models.CharField(max_length=1000)
+    lyrics = models.CharField(max_length=1000)
     # date = models.DateTimeField('date published')
 
     # def was_published_recently(self):
