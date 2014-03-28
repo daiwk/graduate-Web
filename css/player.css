@@ -2,3 +2,19 @@ body
 {
     background-repeat: no repeat;
 }
+.resultdiv
+{
+    font-family: '华文楷体';
+    filter: alpha(opacity=90 finishopacity=80 style=1 startx=0,starty=0,finishx=0,finishy=800) progid:DXImageTransform.Microsoft.gradient(startcolorstr=#333333,endcolorstr=white,gradientType=0);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(0,0,0,0.7);
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 3px 3px 3px gray;
+    -webkit-box-shadow: 3px 3px 3px gray;
+}

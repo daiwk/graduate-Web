@@ -115,7 +115,7 @@ def recommend(request):
 
 #        rec_id = rec_singer.encode('utf8') + '<a href="' + rec_url +'" target="musicframes">' + rec_title.encode('utf8') + '</a>'
         print rec_lyric.encode('utf8')+'tmp'
-        rec_id = '<strong>' + rec_singer.encode('utf8') + ' <a href="/musicrec/player.html?url=' + rec_url + '&singer=' + rec_singer.encode('utf8') + '&title=' + rec_title.encode('utf8') + '&lyric=' + rec_lyric.encode('utf8') + '" target="musicframe">' + rec_title.encode('utf8') + '</a></strong>'
+        rec_id = '<div style="font-family:楷体;color:gray;background-repeat: no-repeat;background-position: center;background-color:rgba(0,0,0,0.7);width: 80%;margin: 0 auto;margin-bottom:10px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-moz-box-shadow: 3px 3px 3px gray;-webkit-box-shadow: 3px 3px 3px gray;">' + rec_singer.encode('utf8') + '<br/><a href="/musicrec/player.html?url=' + rec_url + '&singer=' + rec_singer.encode('utf8') + '&title=' + rec_title.encode('utf8') + '&lyric=' + rec_lyric.encode('utf8') + '" target="musicframe" style="color:gold;text-decoration:none;">' + rec_title.encode('utf8') + '</a></div>'
         
         rec_list.append(rec_id)
 
