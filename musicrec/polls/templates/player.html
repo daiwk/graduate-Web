@@ -1,16 +1,22 @@
 <script>
+    
+    parent.document.title='{{title}}-{{singer}}-深度FM';
     function next(){
         window.location='/musicrec/player.html';
     }
+
 </script>
-<center>
-    <div class="col-xs-12 col-sm-9" style="top:60px">
+<center >
+            <div class="col-xs-12 col-sm-9" style="top:60px" onload="">
         <h2 style="font-family: 楷体;color: black;">{{title}}</h2>
         <h3 style="font-family: 楷体;color: black;">{{singer}}</h3>
         <audio name="musicframes" controls="controls" autoplay="autoplay" onended="next()">
         <source src="{{url}}" type="audio/mpeg"/>
         </audio>
-        <a href="/musicrec/player.html"><img src="http://172.18.217.67:8000/imgs/next.png" title="下一首"></img></a><h1/>
+        <!--        <a href="/musicrec/player.html">-->
+            <img src="http://172.18.217.67:8000/imgs/next.png" onclick="next()" title="下一首"></img>
+            <!--</a>-->
+            <h1/>
         <textarea style="margin: 0px; width: 793px; height: 366px;text-align:center;width:50%;font-family: 楷体;color: black;opacity: 0.80;" readonly>
             {{lyric}}
         </textarea>
